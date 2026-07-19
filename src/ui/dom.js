@@ -30,7 +30,7 @@ function renderWeatherData(data) {
   // Conditions------------------------------------------
   const temp = document.createElement("h3");
   temp.classList.add("temp");
-  temp.textContent = data.current.temp;
+  temp.textContent = `${data.current.temp}°C`;
 
   const condition = document.createElement("p");
   condition.classList.add("condition");
@@ -42,19 +42,19 @@ function renderWeatherData(data) {
   // Additional----------------------------------------------
   const uvIndex = document.createElement("p");
   uvIndex.classList.add("uv-index");
-  uvIndex.textContent = data.current.uvIndex;
+  uvIndex.textContent = `UV Index: ${data.current.uvIndex}`;
 
   const humidity = document.createElement("p");
   humidity.classList.add("humidity");
-  humidity.textContent = data.current.humidity;
+  humidity.textContent = `Humidity: ${data.current.humidity}`;
 
   const windSpeed = document.createElement("p");
   windSpeed.classList.add("wind-speed");
-  windSpeed.textContent = data.current.windSpeed;
+  windSpeed.textContent = `Wind Speed: ${data.current.windSpeed}`;
 
   const visibility = document.createElement("p");
   visibility.classList.add("visibility");
-  visibility.textContent = data.current.visibility;
+  visibility.textContent = `Visibility: ${data.current.visibility}`;
 
   additional.appendChild(uvIndex);
   additional.appendChild(humidity);
@@ -82,11 +82,11 @@ function renderWeatherData(data) {
 
     const forecastTempMax = document.createElement("p");
     forecastTempMax.classList.add("forecast-temp-max");
-    forecastTempMax.textContent = day.tempMax;
+    forecastTempMax.textContent = `${day.tempMax}°C`;
 
     const forecastTempMin = document.createElement("p");
     forecastTempMin.classList.add("forecast-temp-min");
-    forecastTempMin.textContent = day.tempMin;
+    forecastTempMin.textContent = `${day.tempMin}°C`;
 
     forecastList.appendChild(dayCard);
     dayCard.appendChild(forecastDate);

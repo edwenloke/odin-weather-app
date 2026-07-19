@@ -1,0 +1,251 @@
+/* ------------------------------
+   Global
+------------------------------ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #6dd5fa, #2980b9);
+  min-height: 100vh;
+  color: #222;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+}
+
+/* ------------------------------
+   Search Bar
+------------------------------ */
+
+.location-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  background: white;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+
+  width: min(650px, 100%);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+#search-icon {
+  width: 22px;
+  height: 22px;
+}
+
+#location-search {
+  flex: 1;
+
+  border: none;
+  outline: none;
+
+  font-size: 1rem;
+}
+
+.search-btn {
+  border: none;
+  background: #2980b9;
+  color: white;
+
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.search-btn:hover {
+  background: #1f6390;
+}
+
+/* ------------------------------
+   Current Weather
+------------------------------ */
+
+.current-weather-container {
+  max-width: 900px;
+  margin: auto;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------
+   Title Section
+------------------------------ */
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1rem;
+}
+
+.location {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.date,
+.time {
+  color: #666;
+}
+
+/* ------------------------------
+   Current Conditions
+------------------------------ */
+
+.condition-details {
+  text-align: center;
+}
+
+.temp {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+}
+
+.condition {
+  font-size: 1.3rem;
+  color: #555;
+}
+
+/* ------------------------------
+   Additional Information
+------------------------------ */
+
+.additional {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.additional p {
+  background: #f5f7fa;
+
+  padding: 1rem;
+
+  border-radius: 12px;
+
+  text-align: center;
+
+  font-weight: 600;
+}
+
+/* ------------------------------
+   Forecast
+------------------------------ */
+
+.forecast-container {
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
+.forecast-title {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.forecast-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.day-card {
+  background: rgba(255, 255, 255, 0.95);
+
+  border-radius: 16px;
+
+  padding: 1rem;
+
+  text-align: center;
+
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.day-card:hover {
+  transform: translateY(-5px);
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.forecast-date {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.forecast-condition {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.forecast-temp-max {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+.forecast-temp-min {
+  color: #3498db;
+}
+
+/* ------------------------------
+   Responsive
+------------------------------ */
+
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+
+  .title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .temp {
+    font-size: 3rem;
+  }
+
+  .search-container {
+    border-radius: 20px;
+  }
+}
