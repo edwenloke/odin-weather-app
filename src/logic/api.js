@@ -19,4 +19,5 @@ async function fetchApi(location) {
   }
 }
 
+
 export { fetchApi };

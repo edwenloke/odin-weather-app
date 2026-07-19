@@ -4,10 +4,14 @@ function processWeatherData(data) {
   }
 
   const weather = {
+    location: data.resolvedAddress,
+    date: data.days[0].datetime,
+    time: data.currentConditions.datetime,
+
     current: {
       icon: data.currentConditions.icon,
       temp: data.currentConditions.temp,
-      conditions: data.currentConditions.conditions,
+      condition: data.currentConditions.conditions,
       uvIndex: data.currentConditions.uvindex,
       humidity: data.currentConditions.humidity,
       windSpeed: data.currentConditions.windspeed,
@@ -18,11 +22,11 @@ function processWeatherData(data) {
       return {
         date: day.datetime,
         icon: day.icon,
+        condition: day.conditions,
         tempMax: day.tempmax,
         tempMin: day.tempmin,
       };
     }),
-
   };
 
   return weather;
